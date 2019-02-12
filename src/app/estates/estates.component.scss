@@ -1,0 +1,33 @@
+.estates__header
+{
+    padding: 5px 0;
+    color: #fff;
+    background-color: #337499;
+}
+
+.estates__back-btn
+{
+    ion-icon
+    {
+        color: #fff;
+    }
+}
+
+.estates__back-btn,
+.estates__title
+{
+    vertical-align: middle;
+}
+
+.estates__title
+{
+    display: inline-block;
+}
+
+.estates__region-heading
+{
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #60aa99;
+    font-size: 14px;
+}

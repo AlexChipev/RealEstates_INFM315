@@ -1,0 +1,29 @@
+.estate-view__header
+{
+    padding: 5px 0;
+    color: #fff;
+    background-color: #337499;
+}
+
+.estate-view__back-btn
+{
+    ion-icon
+    {
+        color: #fff;
+    }
+}
+
+.estate-view__back-btn,
+.estate-view__title
+{
+    vertical-align: middle;
+}
+
+.estate-view__back-btn
+{
+    text-transform: uppercase;
+}
+.estate-view__title
+{
+    display: inline-block;
+}

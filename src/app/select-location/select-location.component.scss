@@ -1,0 +1,41 @@
+.select-location__header
+{
+    padding: 5px 0;
+    color: #fff;
+    background-color: #337499;
+}
+
+.select-location__back-btn
+{
+    ion-icon
+    {
+        color: #fff;
+    }
+}
+
+.select-location__back-btn,
+.select-location__title
+{
+    vertical-align: middle;
+}
+
+.select-location__title
+{
+    display: inline-block;
+}
+
+.selected-locations__item
+{
+    a
+    {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #000;
+        font-weight: 400;
+        background-color: transparent;
+        text-align: left;
+        text-decoration: none;
+    }
+}

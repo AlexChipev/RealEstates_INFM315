@@ -1,0 +1,7 @@
+{
+  "name": "RealEstates_INFM315",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

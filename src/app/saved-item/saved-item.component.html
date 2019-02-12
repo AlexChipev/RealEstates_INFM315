@@ -1,0 +1,30 @@
+<ion-item *ngFor="let d of data" no-padding>
+  <div *ngIf="d" class="saved-estate__wrapper">
+
+    <div class="saved-estate saved-estate__img">
+      <img src={{d.image}} />
+    </div>
+
+    <div class="saved-estate saved-estate__info">
+      <ion-label>
+        <div class="saved-estate__info-refNo">
+          Ref No.{{d.refNumber}}
+        </div>
+        <p class="saved-estate__info-estate">
+          <span>{{d.type}}</span>,
+          <span> {{d.bedrooms}} Bedrooms</span>
+        </p>
+        <p class="saved-estate__info-location">
+          {{locationName || d.locName}}, {{d.region}}
+        </p>
+      </ion-label>
+    </div>
+    <div class="saved-estate saved-estate__view-link">
+      <ion-button fill="clear">
+        <a [routerLink]="['/home', d.id, location || d.location]">
+          View
+        </a>
+      </ion-button>
+    </div>
+  </div>
+</ion-item>

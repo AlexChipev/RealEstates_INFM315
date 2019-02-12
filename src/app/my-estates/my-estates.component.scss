@@ -1,0 +1,41 @@
+.my-estates__menu-btn
+{
+    display: inline-block;
+}
+
+.my-estates__header
+{
+    padding: 10px;
+    background-color: #337499;
+    color: #fff;
+}
+
+.my-estates__header-icon
+{
+    width: 22px;
+    height: 22px;
+}
+
+.my-estates__header-title
+{
+    display: inline-block;
+    font-size: 22px;
+}
+
+.my-estates__toolbar
+{
+    padding-left: 10px;
+    --ion-background-color:  #60aa99;;
+    --ion-text-color: #fff;
+    font-size: 22px;
+}
+
+.my-estates-container
+{
+    overflow: auto;
+}
+
+.saved-estate__info-location
+{
+    margin-top: 30px;
+}

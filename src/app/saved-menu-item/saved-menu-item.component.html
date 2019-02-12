@@ -1,0 +1,24 @@
+<ion-item name="" id="menu-item" *ngFor="let d of data" no-padding>
+  <a *ngIf="d" class="saved-menu-estate__button" (click)="viewClickHandler(d.refId)" fill="clear" [routerLink]="['/home', d.id, d.location]">
+    <div class="saved-menu-estate saved-menu-estate__info">
+      <div class="saved-menu-estate__thumbnail">
+        <ion-thumbnail>
+          <img src={{d.image}}>
+        </ion-thumbnail>
+      </div>
+      <div class="saved-menu-estate__info-refNo">
+        Ref No.{{d.refNumber}}
+      </div>
+      <div class="saved-menu-estate__estate-info-wrapper">
+        <p class="saved-menu-estate__info-estate">
+          <span>{{d.type}}</span>,
+          <span> {{d.bedrooms}} Bedrooms</span>
+        </p>
+        <p class="saved-menu-estate__info-location">
+          {{d.locName}}, {{d.region}}
+        </p>
+      </div>
+    </div>
+  </a>
+</ion-item>
+<ion-router-outlet name="" id="menu-item"></ion-router-outlet>

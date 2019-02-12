@@ -1,0 +1,19 @@
+<ion-header class="estates__header">
+  <ion-button fill="clear" class="estates__back-btn" href="/locations" routerDirection="back">
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+  <ion-title class="estates__title">Estates</ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let r of regions">
+    <ion-card-content class="estates__region-list">
+      <div class="estates__region-heading">
+        {{r}}
+      </div>
+      <ion-list overflow-scroll="true">
+        <saved-item [setData]="data[r]" [setLocation]="locID" [locName]="location"></saved-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

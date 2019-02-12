@@ -1,0 +1,20 @@
+<ion-footer class="estate__footer">
+  <div class="footer_item overview">
+    <a [routerLink]="['/overview', overviewParams.id, overviewParams.location]">
+      <ion-icon class="footer__icon" slot="icon-only" name="alert"></ion-icon>
+      <div class="footer__title">Overview</div>
+    </a>
+  </div>
+  <div class="footer_item map">
+    <a >
+      <ion-icon class="footer__icon" slot="icon-only" name="map"></ion-icon>
+      <div class="footer__title">Map</div>
+    </a>
+  </div>
+  <div class="footer_item similar">
+    <a [routerLink]="['/similar', overviewParams.id, overviewParams.location]">
+      <ion-icon class="footer__icon" slot="icon-only" name="photos"></ion-icon>
+      <div class="footer__title">Similar</div>
+    </a>
+  </div>
+</ion-footer>

@@ -1,0 +1,90 @@
+<ion-header class="estate-view__header">
+  <ion-button fill="clear" class="estate-view__back-btn" href="/locations" routerDirection="back">
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+  <ion-title class="estate-view__title">Ref.No {{estate.refNumber}}</ion-title>
+  <a *ngIf="shouldDrawSimilar" class="estate-view__header-home-icon" [routerLink]="['']">
+    <ion-icon sloth="end" name="home"></ion-icon>
+  </a>
+</ion-header>
+
+<ion-card *ngIf="shouldDrawOverview">
+  <ion-img src={{estate.image}}></ion-img>
+  <ion-card-content class="overview__content">
+    <div>
+      <ion-button class="overview__btn" (click)="onClick()" fill={{btnColor}}>
+        <ion-icon slot="start" name="bookmark"></ion-icon>
+        {{saveBtn}}
+      </ion-button>
+    </div>
+    <div class="overview__info-wrapper">
+      <div class="overview__side overview__side--right">
+        <div class="overview__type">{{estate.type}}</div>
+        <div class="overview__size">
+          <span>
+            <ion-badge slot="start" color="primary">{{estate.bedrooms}}</ion-badge>
+          </span>
+          <span class="overview_bdr-txt"> Bedrooms</span>
+        </div>
+      </div>
+      <div class="overview__side overview__side--left">
+        <div class="overview__area">Area: {{estate.area}} m<sup>2</sup></div>
+        <div class="overview__price">Price: {{estate.price | currency: 'USD':'symbol':'1.2-2'}}</div>
+      </div>
+    </div>
+    <div class="overview__address">{{estate.address}}</div>
+  </ion-card-content>
+</ion-card>
+
+<agm-map *ngIf="shouldDrawMaps" [latitude]="data.latitude" [longitude]="data.longitude"></agm-map>
+
+<ion-content *ngIf="shouldDrawSimilar">
+  <ion-segment class="similar__segment" [(ngModel)]="segmentSelected" (ionChange)="onChange($event.target.value)">
+    <ion-segment-button value="Region">
+      <ion-label>Region</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="All">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card class="similar__select">
+    <ion-label class="similar__select-item similar__select-item-label">Filter by type:</ion-label>
+    <div class="similar__select-item similar__select-item-select">
+      <ion-select disabled={{isSwitched}} value={{estate.type}} (ionChange)="onSelect($event.target.value)">
+        <ion-select-option value="Apartment">Apartment</ion-select-option>
+        <ion-select-option value="House">House</ion-select-option>
+        <ion-select-option value="Studio">Studio</ion-select-option>
+      </ion-select>
+    </div>
+    <div class="similar__select-item similar__select-item-toggle">
+      <ion-toggle class="similar__select-item similar__select-item-toggle" (ionChange)="toggleSwitch()"></ion-toggle>
+    </div>
+  </ion-card>
+
+  <ion-card *ngFor="let r of regions">
+    <ion-card-content *ngIf="data[r]" class="estates__region-list">
+      <div class="estates__region-heading">
+        {{r}}
+      </div>
+      <ion-list overflow-scroll="true">
+        <saved-item [setData]="data[r]" [setLocation]="locID" [locName]="location"></saved-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer class="estate__footer">
+  <div (click)="clickOverview()" class="footer_item overview">
+    <ion-icon isActive class="footer__icon" slot="icon-only" name="alert"></ion-icon>
+    <div class="footer__title">Overview</div>
+  </div>
+  <div (click)="clickMaps()" class="footer_item map">
+    <ion-icon class="footer__icon" slot="icon-only" name="map"></ion-icon>
+    <div class="footer__title">Map</div>
+  </div>
+  <div (click)="clickSimilar()" class="footer_item similar">
+    <ion-icon class="footer__icon" slot="icon-only" name="photos"></ion-icon>
+    <div class="footer__title">Similar</div>
+  </div>
+</ion-footer>

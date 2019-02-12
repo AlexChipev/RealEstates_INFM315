@@ -1,0 +1,32 @@
+<div>
+<side-menu></side-menu>
+<ion-header class="my-estates__header">
+  <ion-menu-toggle>
+    <ion-buttons class="my-estates__menu-btn">
+      <ion-menu-button type="button">
+        <ion-icon class="my-estates__header-icon" slot="icon-only" name="menu"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-menu-toggle>
+  <ion-title class="my-estates__header-title">
+    Royal Estates
+  </ion-title>
+</ion-header>
+
+<div class="my-estates-container">
+  <ion-toolbar class="my-estates__toolbar">
+    My Estates
+  </ion-toolbar>
+  <ion-card>
+    <ion-card-content class="saved-estate__list">
+      <ion-list overflow-scroll="true">
+        <saved-item [setData]="data"></saved-item>
+      </ion-list>
+      <div class="saved-estate__select-location-txt">
+        To save more estates, select a location, then you can save estates from their estate overview page
+      </div>
+      <find-loc-btn></find-loc-btn>
+    </ion-card-content>
+  </ion-card>
+</div>
+</div>

@@ -1,0 +1,48 @@
+.saved-menu-estate__info
+{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.saved-menu-estate__thumbnail
+{
+    flex: 1 0 20%
+}
+
+.saved-menu-estate__info-refNo
+{
+    flex: 0 0 30%;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.saved-menu-estate__estate-info-wrapper
+{
+    flex: 1 1 50%;
+    align-self: center;
+    overflow: hidden;
+}
+
+.saved-menu-estate__button
+{
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    --ion-color-primary: #000;
+}
+
+.saved-menu-estate__button p
+{
+    font-size: 12px;
+    margin: 5px 0;
+    text-transform: initial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.saved-menu-estate__info-refNo
+{
+    font-weight: 600;
+}

@@ -1,0 +1,44 @@
+.overview__content
+{
+    padding-top: 10px;
+}
+.overview__info-wrapper
+{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.overview__side
+{
+    flex: 1 1 50%;
+    align-self: center;
+}
+
+.overview__size 
+{
+    span
+    {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    ion-badge
+    {
+        padding: 2px 7px;
+    }
+}
+
+.overview_bdr-txt
+{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.overview__btn
+{
+    margin-bottom: 10px;
+}
+
+.overview__price
+{
+    padding-bottom: 6px;
+}
